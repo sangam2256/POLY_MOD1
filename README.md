@@ -1,59 +1,74 @@
-# Polygon-Module 1 : Building with Polygon Bridge
+# Polygon-Module 1: Building with Polygon Bridge
 
 Deploying an NFT collection on Ethereum and mapping it to Polygon, while also using an image generation tool like DALL-E 2 or Midjourney for the NFT images, is an exciting project. Here's a step-by-step guide on how to achieve this:
 
 ## Getting Started
-Step 1: Firstly use Lexica to generate 5 item collection.Store it on ipfs and copy the Urls of ips and upload on pinata cloud. 
 
-Step 2: Create the NFT Contract on Ethereum and Test the NFT Contract
+### Step 1: Generating the NFT Collection
 
-Step 3: Set up the Polygon Network
+Use Lexica to generate a 5-item NFT collection. Store the generated NFTs on IPFS and copy the URLs of the IPFS content. Upload the NFT metadata to Pinata Cloud for hosting.
 
-Step 4: Deploy NFT Contract on Polygon
+### Step 2: Create and Test the NFT Contract on Ethereum
 
-Step 5: Map the NFT Collection to Polygon
+Create an ERC-721 smart contract on the Ethereum network. Test the contract to ensure it functions as expected.
 
-Step 6: Transfer Assets via the Polygon Bridge
+### Step 3: Set up the Polygon Network
 
-### Executing program
+Prepare the environment to deploy and interact with the Polygon network.
 
-Clone the Repository and open terminal, run:
+### Step 4: Deploy the NFT Contract on Polygon
+
+Deploy the ERC-721 smart contract on the Polygon network.
+
+### Step 5: Map the NFT Collection to Polygon
+
+Associate the NFT collection deployed on Ethereum with the corresponding contract deployed on Polygon. This allows the NFTs to be used on both networks.
+
+### Step 6: Transfer Assets via the Polygon Bridge
+
+Use the Polygon Bridge to transfer the NFT assets from the Ethereum network to the Polygon network.
+
+## Executing Program
+
+To run the project, follow these steps:
+
+1. Clone the repository and open the terminal.
+
+2. Install the required dependencies by running the command:
 
 ```shell
- npm install or npm i
+npm install or npm i
 ```
 
-After installing the dependencies, run the test file by using the following command:
+3. After installing the dependencies, run the test file using the following command:
 
 ```shell
 npx hardhat test
 ```
 
-### Deploying the ERC721A Contract
+## Deploying the ERC721A Contract
 
-Before deploying, Rename ".env.example" to ".env" and provide your wallet private key where required i.e. "PRIVATE_KEY= 'your wallet private key'". Run the following command to deploy the ERC721 contract to the Goerli Ethereum Testnet:
+Before deploying, rename the file ".env.example" to ".env" and provide your wallet private key where required, i.e., `PRIVATE_KEY='your wallet private key'`. To deploy the ERC721 contract to the Goerli Ethereum Testnet, execute the following command:
 
-``` shell
-npx hardhat run scripts/deploy.js --network goerli 
+```shell
+npx hardhat run scripts/deploy.js --network goerli
 ```
-### NOTE:
-After deploying the address will generate. So, copy that address into `contarctAddress.js`(stored in metadata folder) and also in `batchMint.js`(stored in scripts folder) as well in 'approveDeposit.js'
 
-The script will deploy the contract
- 
-### Batch Mint NFTs
+**NOTE:** After deploying, an address will be generated. Copy that address into `contractAddress.js` (stored in the metadata folder) and also in `batchMint.js` (stored in the scripts folder) as well as in `approveDeposit.js`.
 
-Run the following command to batch-mint NFTs using the deployed ERC721 contract:
+## Batch Mint NFTs
 
-``` shell
+To batch-mint NFTs using the deployed ERC721 contract, run the following command:
+
+```shell
 npx hardhat run scripts/batchMint.js --network goerli
 ```
 
 The script will mint the specified number of NFTs and assign them to your address.
 
-### Approve and Deposit NFTs to Polygon Mumbai
+## Approve and Deposit NFTs
 
-Run the following commands to approve and deposit the minted NFTs from Ethereum to the Polygon Mumbai network using the FxPortal Bridge:
+To approve and deposit the minted NFTs from Ethereum to the  network using the FxPortal Bridge, run the following commands:
 
 ```shell
 npx hardhat run scripts/approveDeposit.js --network goerli
@@ -61,9 +76,10 @@ npx hardhat run scripts/approveDeposit.js --network goerli
 
 ## Author
 
-Sangam Kumar-Chandigarh University
+Sangam Kumar - Chandigarh University
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
 You can make a copy of the project to use for your own purposes.
