@@ -1,6 +1,6 @@
 # Polygon-Module 1: Building with Polygon Bridge
 
-Deploying an NFT collection on Ethereum and mapping it to Polygon, while also using an image generation tool like DALL-E 2 or Midjourney for the NFT images, is an exciting project. Here's a step-by-step guide on how to achieve this:
+Deploying an NFT collection on Ethereum and mapping it to Polygon, while also using an image generation tool like DALL-E 2 or Midjourney for the NFT images, is an exciting project. Here's a step-by-step guide on how to achieve this:=
 
 ## Getting Started
 
