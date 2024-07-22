@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 const fs = require('fs');
 
-async function main() {
+async function main() { 
   // Get the contract factory
   const NFT = await hre.ethers.getContractFactory("Indian_ETH");
 
