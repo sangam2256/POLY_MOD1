@@ -5,7 +5,7 @@ const ABI = require('../artifacts/contracts/Indian_ETH.sol/Indian_ETH.json');
 require('dotenv').config();
 
 //Transfer ERC721A tokens to the Ethereum FxChain network
-async function main() {
+async function main() { 
 
   // Set up connections to network and wallet
   const networkAddress = 'https://ethereum-goerli.publicnode.com';
