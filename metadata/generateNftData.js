@@ -3,7 +3,7 @@ const path = require('path');
 console.log(__dirname);
 
 // Imports the nfts array from a separate file
-const nfts = require('./nfts');
+const nfts = require('./nfts'); 
 
 for (let i = 0; i < nfts.length; i++) {
 
