@@ -3,7 +3,7 @@ const nfts = [
         name: '0',
         description: 'This is the first or cover image of Indian NFT collection.',
         image: 'QmXJ9oWFeqfaBj192SFyR778N4hpxcEEnSRD4LSsrGJZbo'
-    },
+    }, 
     {
         name: '1',
         description: 'This is a generic image NFT in the Indian NFT collection.',
