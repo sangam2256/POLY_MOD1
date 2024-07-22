@@ -8,7 +8,7 @@ async function main() {
   // Get private key from env
   const privateKey = process.env.PRIVATE_KEY;
 
-  // The URL of the network provider
+  // The URL of the network provider 
   const networkAddress = "https://ethereum-goerli.publicnode.com";
 
   // Create a provider using the URL
