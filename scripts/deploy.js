@@ -1,9 +1,9 @@
 const hre = require("hardhat");
-const fs = require('fs');
+const fs = require("fs");
 
-async function main() { 
+async function main() {
   // Get the contract factory
-  const NFT = await hre.ethers.getContractFactory("Indian_ETH");
+  const NFT = await hre.ethers.getContractFactory("itzoak");
 
   // Deploy the contract
   const nft = await NFT.deploy();
@@ -14,11 +14,13 @@ async function main() {
   // Log the contract address
   console.log("NFT contract deployed to:", nft.address);
 
-  
   // export the addresses
-  fs.writeFileSync('metadata/contractAddress.js', `
+  fs.writeFileSync(
+    "metadata/contractAddress.js",
+    `
     export const nftAddress = "${nft.address}"
-  `)
+  `
+  );
 }
 
 // Execute the deployment function
@@ -27,4 +29,4 @@ main()
   .catch((error) => {
     console.error(error);
     process.exit(1);
-});
+  });
