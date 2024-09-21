@@ -1,4 +1,4 @@
-// This script batch mints Indian_ETH ERC721A tokens.
+// This script batch mints criceket ERC721A tokens.
 
 // Import required libraries
 const { ethers } = require("hardhat");
@@ -8,8 +8,9 @@ async function main() {
   // Get private key from env
   const privateKey = process.env.PRIVATE_KEY;
 
-  // The URL of the network provider 
-  const networkAddress = "https://ethereum-goerli.publicnode.com";
+  // The URL of the network provider
+  const networkAddress =
+    "https://ethereum-sepolia-rpc.publicnode.com";
 
   // Create a provider using the URL
   const provider = new ethers.providers.JsonRpcProvider(networkAddress);
@@ -18,10 +19,10 @@ async function main() {
   const signer = new ethers.Wallet(privateKey, provider);
 
   // Tthe address of the deployed contract
-  const contractAddress = "0xd3752b3cFcc239B69166bFb85f847d52B8e54bBD";
+  const contractAddress = "0x169419D73b3efDD2CF01bE573211a90A0E966464";
 
   // Get the contract factory and attach it to the signer
-  const IndianNFT = await ethers.getContractFactory("Indian_ETH", signer);
+  const IndianNFT = await ethers.getContractFactory("itzoak", signer);
   const contract = await IndianNFT.attach(contractAddress);
 
   // Call the mint function on the contract to mint 5 tokens
@@ -33,7 +34,7 @@ async function main() {
 
 main()
   .then(() => process.exit(0))
-  .catch(error => {
+  .catch((error) => {
     console.error(error);
     process.exit(1);
   });
