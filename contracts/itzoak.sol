@@ -1,23 +1,23 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.9;
 
 import "erc721a/contracts/ERC721A.sol";
 
-contract Indian_ETH is ERC721A{
-
+contract itzoak is ERC721A {
     address public owner;
 
     // Maximum number of tokens that can be minted
     uint256 public maxQuantity = 5;
 
     // Base url for the nfts
-    string baseUrl = "https://gateway.pinata.cloud/ipfs/QmU57kQ4c4LVAce7DwPNdGcLHBQMYdpv1CyU8X9p1Bp5eg/";
+    string baseUrl =
+        "https://gateway.pinata.cloud/ipfs/QmcX3QoHU2kSJwEacBDqXpLJ3XhEGf3cawpffjarGwMqaQ/";
 
     // URL for the prompt description
-    string public prompt =
-        "Create a visually captivating NFT artwork that pays homage to an Indian hero from folklore, mythology, or history.";
+    string public prompt = "A cricketer wearing blue jersey cheering the crowd";
 
-    constructor() ERC721A("Indian", "IND") {
+    constructor() ERC721A("cricketer", "CRT") {
         owner = msg.sender;
     }
 
@@ -28,13 +28,16 @@ contract Indian_ETH is ERC721A{
     }
 
     // Function to mint NFT which only owner can perform
-    function mint(uint256 quantity) external payable onlyOwner{
-        require(totalSupply() + quantity <= maxQuantity ,"You can not mint more than 5");
+    function mint(uint256 quantity) external payable onlyOwner {
+        require(
+            totalSupply() + quantity <= maxQuantity,
+            "You can not mint more than 5"
+        );
         _mint(msg.sender, quantity);
     }
 
     // Override the baseURI function to return the base URL for the NFTs
-    function _baseURI() internal view override returns (string memory){
+    function _baseURI() internal view override returns (string memory) {
         return baseUrl;
     }
 
